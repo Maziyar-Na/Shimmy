@@ -1,0 +1,3 @@
+/home/maaz/CLionProjects/ShimmyProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/maaz/CLionProjects/ShimmyProject/cmake-build-debug/CMakeFiles/ShimmyProject.dir
+/home/maaz/CLionProjects/ShimmyProject/cmake-build-debug/CMakeFiles/edit_cache.dir

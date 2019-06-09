@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/ShimmyProject.dir/main.cpp.o CMakeFiles/ShimmyProject.dir/shimmy_master_publisher.cpp.o CMakeFiles/ShimmyProject.dir/master_server.cpp.o CMakeFiles/ShimmyProject.dir/agent_server.cpp.o CMakeFiles/ShimmyProject.dir/shimmy_agent_utils.cpp.o CMakeFiles/ShimmyProject.dir/master_client.cpp.o  -o ShimmyProject 
