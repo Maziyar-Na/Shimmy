@@ -21,6 +21,7 @@ int shimmy_master::server::handle_request(char* req){
         pub_t new_pub(hostid);
         return publisher_utils->reg_pub(new_pub);
     }
+    return -1;
 
 }
 void shimmy_master::server::start(){

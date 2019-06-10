@@ -35,9 +35,11 @@ int shimmy_master::pub_utils::reg_pub(pub_t new_pub){
 
     int new_id = gen_new_id();
     new_pub.id = new_id;
-    std::cout <<" [dbg] this is the id generated for the publisher container: " << new_id << std::endl;
+    std::cout <<" [dbg] Shimmy master --> this is the id generated for the publisher container: " << new_id << std::endl;
     shimmy_master::client* c = new client();
+    std::cout <<" [dbg] Shimmy master --> master client created: "<< std::endl;
     new_pub.shm_id = c->send_req();
+    std::cout <<" [dbg] Shimmy master --> request responded and the shared memory: " << new_pub.shm_id << std::endl;
     pub_store.push_back(new_pub);
 
     return new_pub.shm_id;

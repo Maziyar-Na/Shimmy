@@ -54,17 +54,22 @@ void shimmy_agent::server::start() {
 
     int byte_read = read( new_socket , buff, __BUFFSIZE__);
     //printf("%s\n",buff );
-    int response = handle_request(buff);
+    std::cout << "[dbg] Shimmy agent --> I got the request and it is: " << std::string(buff) << std:: endl;
+    int response = this->handle_request(buff);
+    std::cout << "[dbg] Shimmy agent --> to_string(response): " << response << std:: endl;
     std::string s = std::to_string(response);
     char const *pchar = s.c_str();
     send(new_socket ,  pchar, strlen(pchar) , 0 );
-    std:: cout << "Hello message sent\n";
+    std:: cout << "[dbg] shimmy agent --> shared memory id is: " << s << std::endl;
 }
 
 int shimmy_agent::server::handle_request(char *req) {
-    std::string s(req);
+    //std::string s(req);
 
-    if (req == "create_shm"){
+    if (!strcmp(req, "create_shm")){
+        std::cout << "[dbg] we got here, trying yo get shared memory channel!" << std::endl;
         return utils->get_channel();
     }
+    std::cout << "[dbg] we got here, and achieve nothing!" << std::endl;
+    return 0;
 }

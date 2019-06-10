@@ -8,7 +8,8 @@ int shimmy_master::client::send_req() {
     int sock = 0, valread;
     struct sockaddr_in serv_addr;
     char *hello = "create_shm";
-    char buffer[1024] = {0};
+    //strcpy(hello, "create_shm");
+    char buffer[__BUFFSIZE__] = {0};
     if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
     {
         std::cout << "\n Socket creation error \n";
@@ -31,8 +32,10 @@ int shimmy_master::client::send_req() {
         return -1;
     }
     send(sock , hello , strlen(hello) , 0 );
-    printf("Create shared memory command sent\n");
+    printf("[dbg] Shimmy master: Create shared memory command sent\n");
     valread = read( sock , buffer, __BUFFSIZE__);
-    printf("%s\n",buffer );
-    return 0;
+    printf("[dbg] Shimmy master --> the shared memory file descriptor: %s\n",buffer );
+    std::string s(buffer);
+
+    return std::stoi(s);
 }
